@@ -5,6 +5,7 @@ from langdetect import detect
 
 
 
+
 def get_direction(text):
     try:
         lang = detect(text)
@@ -13,8 +14,8 @@ def get_direction(text):
         return "ltr"
 
 # ---- CONFIGURATION ----
-HF_API_KEY = "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"
-#os.environ["HF_TOKEN"] = HF_API_KEY
+HF_API_KEY = st.secrets["HF_API_KEY"]
+os.environ["HF_TOKEN"] = HF_API_KEY
 
 client = InferenceClient(
     provider="cerebras",
