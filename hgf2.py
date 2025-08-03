@@ -2,10 +2,12 @@ import streamlit as st
 import os
 from huggingface_hub import InferenceClient
 from langdetect import detect
+import streamlit.components.v1 as components
 
 
 
-
+<iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+        
 def get_direction(text):
     try:
         lang = detect(text)
