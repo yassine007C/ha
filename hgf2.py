@@ -7,9 +7,19 @@ import streamlit.components.v1 as components
 
 ad_html = """
 <iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e20" data-zoneid="5692022"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<script type="application/javascript">
+    var ad_idzone = "5691960",
+    ad_popup_fallback = false,
+    ad_popup_force = false,
+    ad_chrome_enabled = true,
+    ad_new_tab = false,
+    ad_frequency_period = 1,
+    ad_frequency_count = 1,
+    ad_trigger_method = 3,
+    ad_trigger_delay = 0,
+    ad_capping_enabled = true; 
+</script>
+<script type="application/javascript" src="https://a.pemsrv.com/popunder1000.js"></script>
 """
 
 # Render ad in Streamlit
