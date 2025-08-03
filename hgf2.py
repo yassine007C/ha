@@ -13,8 +13,7 @@ ad_html = """
 components.html(ad_html, height=250)
 
 
-import streamlit as st
-import streamlit.components.v1 as components
+
 
 popup_ad_code = """
 <script type="application/javascript">
