@@ -7,6 +7,16 @@ import streamlit.components.v1 as components
 
 ad_html = """
 <iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+"""
+
+# Render ad in Streamlit
+components.html(ad_html, height=250)
+
+
+import streamlit as st
+import streamlit.components.v1 as components
+
+popup_ad_code = """
 <script type="application/javascript">
     var ad_idzone = "5691960",
     ad_popup_fallback = false,
@@ -22,8 +32,9 @@ ad_html = """
 <script type="application/javascript" src="https://a.pemsrv.com/popunder1000.js"></script>
 """
 
-# Render ad in Streamlit
-components.html(ad_html, height=250)
+# Inject script with height=0 because there's no visible component
+components.html(popup_ad_code, height=0)
+
    
 def get_direction(text):
     try:
