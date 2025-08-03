@@ -7,6 +7,9 @@ import streamlit.components.v1 as components
 
 ad_html = """
 <iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+ <ins class="eas6a97888e20" data-zoneid="5692022"></ins> 
+ <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 """
 
 # Render ad in Streamlit
