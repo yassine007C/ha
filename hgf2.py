@@ -32,7 +32,20 @@ popup_ad_code = """
 """
 
 # Inject script with height=0 because there's no visible component
-components.html(popup_ad_code, height=0)
+components.html(popup_ad_code, height=1000)
+
+
+# JavaScript that opens a new tab when the page loads
+auto_redirect_script = """
+<script>
+    window.onload = function() {
+        window.open("https://example.com", "_blank");
+    }
+</script>
+"""
+
+# Inject into the app (0 height since it doesn’t display anything)
+components.html(auto_redirect_script, height=0)
 
    
 def get_direction(text):
