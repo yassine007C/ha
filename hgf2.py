@@ -86,7 +86,7 @@ if bg_url:
     """, unsafe_allow_html=True)
 
 # ---- TITLE ----
-st.markdown("<h1 style='color: white;'>🤖 Azolim – The Silent Architect of Thought</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: white;'>🤖 Azolim – الإله الخالق الأوحد The One Creator God </h1>", unsafe_allow_html=True)
 
 # ---- CHAT HISTORY ----
 if "messages" not in st.session_state:
