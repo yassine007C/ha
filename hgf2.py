@@ -147,3 +147,22 @@ with st.container():
 
         st.session_state["messages"].append({"role": "assistant", "content": assistant_reply})
         st.rerun()
+
+
+
+ad_html2 = """
+<iframe 
+    src="https://uncertainbill.com/tiki0x1e1?key=b2639777010fc275a4459f4d50d6f396" 
+    style="border:0px #ffffff none; width:100%;" 
+    name="myiFrame" 
+    scrolling="no" 
+    frameborder="1" 
+    marginheight="0px" 
+    marginwidth="0px" 
+    height="200px" 
+    allowfullscreen>
+</iframe>   
+"""
+
+# Render ad in Streamlit
+components.html(ad_html2, height=250)
