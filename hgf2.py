@@ -10,7 +10,7 @@ ad_html = """
 """
 
 # Render ad in Streamlit
-
+components.html(ad_html, height=250)
 
 
 
@@ -109,7 +109,7 @@ for msg in st.session_state["messages"]:
             unsafe_allow_html=True
         )
 st.markdown("</div>", unsafe_allow_html=True)
-components.html(ad_html, height=250)
+
 # ---- INPUT FIELD ----
 with st.container():
     user_input = st.text_input("💬 You:", key="user_message", placeholder="Type your message here...")
