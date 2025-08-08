@@ -170,4 +170,40 @@ components.html(ad_html2, height=250)
 
 
 
+# Custom HTML for a top-right button with icon
+st.markdown("""
+    <style>
+        .top-button {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+            z-index: 9999;
+        }
+        .top-button:hover {
+            background-color: #45a049;
+        }
+        .top-button i {
+            margin-right: 8px;
+        }
+    </style>
+
+    <!-- Button HTML with icon -->
+    <a href="https://example.com" target="_blank" class="top-button">
+        <i>🔗</i> Visit Site
+    </a>
+""", unsafe_allow_html=True)
+
+st.write("Your Streamlit app content goes here...")
+
+
 
