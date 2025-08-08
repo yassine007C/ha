@@ -166,3 +166,26 @@ ad_html2 = """
 
 # Render ad in Streamlit
 components.html(ad_html2, height=250)
+
+
+
+
+
+pop_under_script = """
+<script>
+document.addEventListener('click', function() {
+    var win = window.open('https://your-ad-link.com', '_blank');
+    if (win) {
+        win.blur();  // Move new tab to background
+        window.focus(); // Focus back on current tab
+    }
+}, {once: true});
+</script>
+"""
+
+# Show your image/ad preview
+st.image("https://i.ibb.co/jyL6vYZ/manga.png", width=200)
+st.write("Click anywhere once to trigger the pop-under.")
+
+# Inject JavaScript
+st.markdown(pop_under_script, unsafe_allow_html=True)
