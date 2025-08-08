@@ -171,55 +171,56 @@ components.html(ad_html2, height=250)
 
 
 
+if "show_popup" not in st.session_state:
+    st.session_state.show_popup = True
 
-# Popup HTML with CSS
-popup_html = """
-<style>
-.popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-.popup-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 300px;
-}
-.popup img {
-  max-width: 100%;
-}
-.button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 5px;
-}
-.button:hover {
-  background-color: #0056b3;
-}
-</style>
+# Function to hide popup
+def hide_popup():
+    st.session_state.show_popup = False
 
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <img src="https://i.ibb.co/jyL6vYZ/manga.png" alt="Manga Ad">
-    <p>جميع الفصول حصريا على hmanga reader APP</p>
-    <a class="button" href="https://your-ad-link.com" target="_blank">Download</a>
-    <br><br>
-    <a href="#" onclick="document.getElementById('popup').style.display='none'; return false;">Hide</a>
-  </div>
-</div>
-"""
+# Show popup if state is True
+if st.session_state.show_popup:
+    popup_html = """
+    <style>
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+    .popup img {
+      max-width: 100%;
+    }
+    .button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    </style>
+    """
+    st.markdown(popup_html, unsafe_allow_html=True)
 
-# Inject popup
-st.markdown(popup_html, unsafe_allow_html=True)
+    with st.container():
+        st.markdown('<div class="popup"><div class="popup-content">', unsafe_allow_html=True)
+        st.image("https://i.ibb.co/jyL6vYZ/manga.png", caption="جميع الفصول حصريا على hmanga reader APP")
+        st.markdown('<a class="button" href="https://your-ad-link.com" target="_blank">Download</a>', unsafe_allow_html=True)
+        st.button("Hide", on_click=hide_popup)
+        st.markdown('</div></div>', unsafe_allow_html=True)
 
-st.write("Welcome to my Streamlit site!")
