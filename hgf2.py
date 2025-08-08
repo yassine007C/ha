@@ -4,15 +4,7 @@ from huggingface_hub import InferenceClient
 from langdetect import detect
 import streamlit.components.v1 as components
 
-icon_url = "https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"  # icon image URL
-redirect_url = "https://www.google.com"  # where to redirect
 
-# Show button with icon
-col1, col2 = st.columns([6, 1])  # left content, right button
-with col2:
-    if st.button(" Go", type="primary"):
-        st.markdown(f"<meta http-equiv='refresh' content='0; url={redirect_url}'>", unsafe_allow_html=True)
-    st.image(icon_url, width=20)
 
 
 
