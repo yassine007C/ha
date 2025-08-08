@@ -172,16 +172,12 @@ components.html(ad_html2, height=250)
 
 
 
-
-
-
 if "show_popup" not in st.session_state:
     st.session_state.show_popup = True
 
 def hide_popup():
     st.session_state.show_popup = False
 
-# Show popup only if not hidden
 if st.session_state.show_popup:
     popup_html = """
     <style>
@@ -221,10 +217,11 @@ if st.session_state.show_popup:
     st.markdown(popup_html, unsafe_allow_html=True)
 
     with st.container():
+        # Keep image and buttons purely in Streamlit widgets
         st.markdown('<div class="popup"><div class="popup-content">', unsafe_allow_html=True)
-        st.image("https://i.ibb.co/jyL6vYZ/manga.png", caption="جميع الفصول حصريا على hmanga reader APP")
+        st.image("https://i.ibb.co/jyL6vYZ/manga.png", use_container_width=True)
         st.markdown('<a class="button" href="https://your-ad-link.com" target="_blank">Download</a>', unsafe_allow_html=True)
-        st.button("Hide", on_click=hide_popup)  # real Streamlit button
+        st.button("Hide", on_click=hide_popup)
         st.markdown('</div></div>', unsafe_allow_html=True)
 
 st.write("Welcome to my Streamlit site!")
