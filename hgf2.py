@@ -4,6 +4,36 @@ from huggingface_hub import InferenceClient
 from langdetect import detect
 import streamlit.components.v1 as components
 
+st.markdown("""
+    <style>
+        .top-right-btn {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: #ff4b4b;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 9999;
+        }
+        .top-right-btn:hover {
+            background-color: #e04343;
+        }
+    </style>
+
+    <a class="top-right-btn" href="https://example.com" target="_blank">
+        🔗 Go to Site
+    </a>
+""", unsafe_allow_html=True)
+
+
+
 
 ad_html = """
 <iframe src="//a.magsrv.com/iframe.php?idzone=5692026&size=900x250" width="900" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>     
@@ -168,42 +198,6 @@ ad_html2 = """
 components.html(ad_html2, height=250)
 
 
-
-
-# Custom HTML for a top-right button with icon
-st.markdown("""
-    <style>
-        .top-button {
-            position: fixed;
-            top: 15px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.3s ease;
-            z-index: 9999;
-        }
-        .top-button:hover {
-            background-color: #45a049;
-        }
-        .top-button i {
-            margin-right: 8px;
-        }
-    </style>
-
-    <!-- Button HTML with icon -->
-    <a href="https://example.com" target="_blank" class="top-button">
-        <i>🔗</i> Visit Site
-    </a>
-""", unsafe_allow_html=True)
-
-st.write("Your Streamlit app content goes here...")
 
 
 
