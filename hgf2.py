@@ -171,56 +171,61 @@ components.html(ad_html2, height=250)
 
 
 
+
+
+
+# --- session state to track popup visibility ---
 if "show_popup" not in st.session_state:
     st.session_state.show_popup = True
 
-# Function to hide popup
 def hide_popup():
     st.session_state.show_popup = False
 
-# Show popup if state is True
+# --- Popup (shows at the beginning while show_popup is True) ---
 if st.session_state.show_popup:
-    popup_html = """
-    <style>
-    .popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .popup-content {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 300px;
-    }
-    .popup img {
-      max-width: 100%;
-    }
-    .button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
-    </style>
-    """
-    st.markdown(popup_html, unsafe_allow_html=True)
+    # Put popup at top using an empty placeholder so it appears before other UI
+    placeholder = st.empty()
+    with placeholder.container():
+        # center the popup visually with columns
+        left, center, right = st.columns([1, 3, 1])
+        with center:
+            # Card style (looks like a popup)
+            st.markdown(
+                """
+                <div style="
+                    border-radius:12px;
+                    padding:18px;
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+                    background: #ffffff;
+                    text-align:center;
+                    max-width:360px;
+                    margin: 16px auto;
+                ">
+                """,
+                unsafe_allow_html=True,
+            )
 
-    with st.container():
-        st.markdown('<div class="popup"><div class="popup-content">', unsafe_allow_html=True)
-        st.image("https://i.ibb.co/jyL6vYZ/manga.png", caption="جميع الفصول حصريا على hmanga reader APP")
-        st.markdown('<a class="button" href="https://your-ad-link.com" target="_blank">Download</a>', unsafe_allow_html=True)
-        st.button("Hide", on_click=hide_popup)
-        st.markdown('</div></div>', unsafe_allow_html=True)
-st.write("Welcome to my Streamlit site!")
+            # image (replace with your image path or URL)
+            st.image("https://i.ibb.co/jyL6vYZ/manga.png", width=180)
+
+            # caption / description
+            st.markdown("<p style='margin:8px 0 14px; font-size:14px;'>جميع الفصول حصريا على hmanga reader APP</p>", unsafe_allow_html=True)
+
+            # two buttons side-by-side
+            c1, c2 = st.columns([1,1])
+            with c1:
+                # Download opens a new tab (user-initiated)
+                st.markdown(
+                    '<a href="https://your-ad-link.com" target="_blank" rel="noopener noreferrer">'
+                    '<button style="padding:8px 16px;border-radius:6px;border:none;background:#007bff;color:white;cursor:pointer;">Download</button>'
+                    '</a>',
+                    unsafe_allow_html=True,
+                )
+            with c2:
+                # Hide is a real Streamlit button that calls Python callback
+                st.button("Hide", on_click=hide_popup)
+
+            st.markdown("</div>", unsafe_allow_html=True)
+
+# --- rest of your app below ---
+st.write("Main app content goes here...")
