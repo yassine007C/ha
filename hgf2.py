@@ -47,16 +47,13 @@ st.markdown("""
     <div class="top-button-container">
         <a class="top-button" href="https://ko-fi.com/azolimgod" target="_blank">
             <img src="https://storage.ko-fi.com/cdn/logomarkLogo.png">
-            <span>Go to Site</span>
+            <span>Support me on Ko-fi</span>
         </a>
     </div>
 """, unsafe_allow_html=True)
 
 
-st.markdown("""
-   <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'W7W21JUJGD');kofiwidget2.draw();</script> 
- 
-""", unsafe_allow_html=True)
+
 
 
    
