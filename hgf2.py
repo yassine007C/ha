@@ -9,7 +9,12 @@ import streamlit.components.v1 as components
 
 
 
+ad_html = """
+<iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="900" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>     
+"""
 
+# Render ad in Streamlit
+components.html(ad_html, height=250)
 
 
 
@@ -148,12 +153,7 @@ with st.container():
 
 
 
-ad_html = """
-<iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="900" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>     
-"""
 
-# Render ad in Streamlit
-components.html(ad_html, height=250)
 
 
 # ad_html2 = """
