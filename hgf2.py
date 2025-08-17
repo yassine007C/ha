@@ -8,12 +8,7 @@ import streamlit.components.v1 as components
 
 
 
-ad_html = """
-<iframe src="//a.magsrv.com/iframe.php?idzone=5692026&size=900x250" width="900" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>     
-"""
 
-# Render ad in Streamlit
-components.html(ad_html, height=250)
 
 
 
@@ -153,7 +148,15 @@ with st.container():
 
 
 
-ad_html2 = """
+ad_html = """
+<iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="900" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>     
+"""
+
+# Render ad in Streamlit
+components.html(ad_html, height=250)
+
+
+# ad_html2 = """
 <iframe 
     src="https://uncertainbill.com/tiki0x1e1?key=b2639777010fc275a4459f4d50d6f396" 
     style="border:0px #ffffff none; width:100%;" 
@@ -168,7 +171,7 @@ ad_html2 = """
 """
 
 # Render ad in Streamlit
-components.html(ad_html2, height=250)
+# components.html(ad_html2, height=250)
 
 
 
