@@ -18,7 +18,39 @@ components.html(ad_html, height=250)
 
 
 
-
+st.markdown("""
+    <style>
+    .top-button-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        margin-bottom: 20px;
+    }
+    .top-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .top-button:hover {
+        background-color: #45a049;
+    }
+    .top-button img {
+        height: 24px;
+    }
+    </style>
+    <div class="top-button-container">
+        <a class="top-button" href="https://example.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+            <span>Go to Site</span>
+        </a>
+    </div>
+""", unsafe_allow_html=True)
 
 
 
