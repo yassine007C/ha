@@ -18,7 +18,7 @@ components.html(ad_html, height=250)
 
 
 
-st.markdown("""
+#st.markdown("""
     <style>
     .top-button-container {
         display: flex;
