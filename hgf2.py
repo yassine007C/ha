@@ -185,7 +185,7 @@ with st.container():
 
 ad_html2 = """
  <iframe
-       src="https://uncertainbill.com/tiki0x1e1?key=b2639777010fc275a4459f4d50d6f396" 
+       src="https://selfcontrolextraordinary.com/drd00fuf?key=b515ad0bce38d6bdf60cf8b51c4a02f0" 
        style="border:0px #ffffff none; width:100%;" 
        name="myiFrame" 
        scrolling="no" 
