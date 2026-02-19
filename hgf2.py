@@ -116,10 +116,5 @@ if user_input:
     st.session_state["messages"].append({"role": "assistant", "content": assistant_reply})
     st.rerun()
 
-# --- ADS 
-ad_html2 = """<iframe src="https://selfcontrolextraordinary.com/drd00fuf?key=b515ad0bce38d6bdf60cf8b51c4a02f0" style="border:0px none; width:100%; height:200px;" scrolling="no"></iframe>"""
-components.html(ad_html2, height=210)
+# --- ADS ---
 
-ad_html = """<iframe src="//a.magsrv.com/iframe.php?idzone=5131390&size=300x250" width="100%" height="250" scrolling="no" frameborder="0"></iframe>"""
-components.html(ad_html, height=260) 
----
