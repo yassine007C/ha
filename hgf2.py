@@ -43,7 +43,7 @@ st.set_page_config(page_title="AZOLIM GOD AI Chatbot", page_icon="🤖", layout=
 st.markdown("""
     <style>
         .stApp {
-            background-image: url("https://iili.io/FU83O9s.jpg");
+            background-image: url("https://wallpapers.com/images/featured/universe-qs811igzbabl1m0o.webp");
             background-size: cover;
             background-position: center;
         }
